@@ -1,0 +1,60 @@
+#content{
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    align-items: center;
+}
+
+#login-container {
+    background-color: #4F4F4F;
+    padding: 2em;
+    width: 500px;
+    border-radius: 25px;
+}
+
+form {
+    display: flex;
+    row-gap: 1em;
+    flex-direction: column;
+    
+}
+.form-title{
+    font-size: 2.5rem;
+    color: white;
+    margin-left: 2rem;
+}
+
+input, button {
+    height: 3em;
+    border-radius: 1.5em;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5em;
+    border: none;
+}
+
+input {
+    padding: 0 2rem;
+}
+
+input:focus
+{
+    outline: none;
+}
+
+.form-buttons
+{
+    display: flex;
+    column-gap: 2em;
+}
+button {
+    flex: 1;
+}
+
+.focused {
+    background-color: #6C4E93;
+    color: white;
+}
+
+#register-form {
+    display: none;
+}
