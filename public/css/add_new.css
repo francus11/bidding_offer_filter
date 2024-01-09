@@ -1,0 +1,102 @@
+.added-filter {
+    background-color: #D9D9D9;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+}
+
+.added-filter i {
+    margin-left: 0.6rem;
+}
+
+.added-filter i::before {
+    margin: 0;
+}
+
+.separator {
+    margin-right: 0.4rem;
+}
+
+#pattern-name {
+    display: flex;
+    font-size: 2rem;
+    color: white;
+    gap: 0.5rem;
+}
+
+#pattern-name div {
+    display: flex;
+    align-items: center;
+}
+
+#pattern-name input {
+    background-color: inherit;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0;
+    font-family: inherit;
+}
+
+#pattern-name input:focus
+{
+    outline: none;
+}
+
+#content {
+    width: 1000px;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 1.2rem;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    width: 750px;
+    gap: 0.6rem 1rem;
+}
+
+#filters-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+#save-button {
+    margin-top: auto;
+}
+
+#enter-query input {
+    height: 3em;
+    border-radius: 1.5em;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border: none;
+    padding: 0 2rem;
+}
+
+#enter-query input:focus {
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+select {
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    font-family: inherit;
+}
+
+#website-selector {
+    color: white;
+}
