@@ -9,15 +9,17 @@ form {
     display: flex;
     row-gap: 1em;
     flex-direction: column;
-    
+
 }
-.form-title{
+
+.form-title {
     font-size: 2.5rem;
     color: white;
     margin-left: 2rem;
 }
 
-input, button {
+input,
+button {
     height: 3em;
     border-radius: 1.5em;
     font-family: 'Inter', sans-serif;
@@ -29,16 +31,15 @@ input {
     padding: 0 2rem;
 }
 
-input:focus
-{
+input:focus {
     outline: none;
 }
 
-.form-buttons
-{
+.form-buttons {
     display: flex;
     column-gap: 2em;
 }
+
 button {
     flex: 1;
 }
@@ -49,5 +50,13 @@ button {
 }
 
 #register-form {
+    /* display: none; */
+}
+
+.visible-form {
+    display: flex;
+}
+
+.invisible-form {
     display: none;
 }
