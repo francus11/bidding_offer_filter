@@ -16,7 +16,7 @@
     <div id="content">
         <div id="patterns-header">
             <div id="title">Patterns</div>
-            <div class="common-button">Create new patters</div>
+            <a href="new_pattern" class="common-button">Create new patters</a>
         </div>
         <div id="patterns">
             <div class="pattern">
