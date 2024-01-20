@@ -8,9 +8,24 @@
     <link rel="stylesheet" type="text/css" href="/public/css/add_new.css">
     <script type="text/javascript" src="./public/js/pattern_edit_scripts.js" defer></script>
     <title>Add new search pattern</title>
+
 </head>
 
 <body>
+    <div id="overlay" onclick="closePopup()"></div>
+
+    <!-- Popup -->
+    <div id="popup">
+        <div id="popup-header">
+            <h2>Select filter</h2>
+            <i class="icon-cancel-1" onclick="closePopup()"></i>
+        </div>
+        <select name="filter-selector" id="filter-selector">
+            <option value="price">Price</option>
+            <option value="name">Name</option>
+            <option value="color">Color</option>
+        </select>
+    </div>
     <?php
     include 'common/header.php';
     ?>
@@ -63,7 +78,7 @@
             </div>
         </div>
         <div id="add-filter-button">
-            <div class="added-filter" onclick="">
+            <div class="added-filter" onclick="openPopup()">
                 <div>Add new filter</div>
                 <i class="icon-plus-1"></i>
             </div>

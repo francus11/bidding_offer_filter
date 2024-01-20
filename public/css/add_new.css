@@ -5,6 +5,10 @@
     border-radius: 2rem;
 }
 
+.added-filter:hover {
+    cursor: pointer;
+}
+
 .added-filter i {
     margin-left: 0.6rem;
 }
@@ -105,13 +109,6 @@ select:focus {
     outline: none;
 }
 
-select {
-    padding: 1rem;
-    font-size: 1rem;
-    border-radius: 2rem;
-    font-family: inherit;
-}
-
 #website-selector {
     color: white;
 }
@@ -140,4 +137,21 @@ select {
     width: 300px;
     z-index: 1001;
     border-radius: 1rem;
+}
+
+#popup i {
+    color: black;
+}
+
+#popup i:hover {
+    cursor: pointer;
+}
+
+#popup-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#popup-header h2 {
+    margin: 0;
 }
