@@ -109,6 +109,14 @@ select:focus {
     outline: none;
 }
 
+select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    margin-top: 0.5rem;
+    border-width: 1px;
+}
+
 #website-selector {
     color: white;
 }
