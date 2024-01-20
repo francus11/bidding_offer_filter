@@ -2,19 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <?php
+    include 'common/common_head.php';
+    ?>
     <link rel="stylesheet" type="text/css" href="/public/css/add_new.css">
-    <link rel="stylesheet" type="text/css" href="/public/fontello/css/fontello.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./public/js/pattern_edit_scripts.js" defer></script>
     <title>Add new search pattern</title>
 </head>
 
 <body>
-    <header></header>
+    <?php
+    include 'common/header.php';
+    ?>
     <div id="content">
         <div id="filters-header">
             <div id="pattern-name">
@@ -28,6 +27,7 @@
         </div>
         <div id="enter-query">
             <input type="text" name="query" placeholder="Enter query">
+            <i class="icon-search"></i>
         </div>
         <div id="website-selector">Website: Currently only Allegro supported</div>
         <div id="filters">
@@ -62,15 +62,18 @@
                 <i class="icon-minus"></i>
             </div>
         </div>
-
-
-        <div class="added-filter">
-            <div>Add new filter</div>
-            <i class="icon-plus-1"></i>
+        <div id="add-filter-button">
+            <div class="added-filter" onclick="">
+                <div>Add new filter</div>
+                <i class="icon-plus-1"></i>
+            </div>
         </div>
-        <div id="save-button" class="common-button">Save and search</div>
+
+        <!-- <div id="save-button" class="common-button">Save and search</div> -->
     </div>
-    <footer></footer>
+    <?php
+    include 'common/footer.php';
+    ?>
 </body>
 
 </html>
