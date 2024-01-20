@@ -38,8 +38,7 @@
     font-family: inherit;
 }
 
-#pattern-name input:focus
-{
+#pattern-name input:focus {
     outline: none;
 }
 
@@ -73,17 +72,33 @@
     margin-top: auto;
 }
 
+#enter-query {
+    min-width: 320px;
+    max-width: 100%;
+    background-color: white;
+    height: 4rem;
+    border-radius: 2rem;
+}
+
 #enter-query input {
-    height: 3em;
-    border-radius: 1.5em;
+    height: 4rem;
     font-family: inherit;
     font-size: 1.2rem;
     border: none;
-    padding: 0 2rem;
+    padding: 0;
+    padding-left: 2rem;
+    min-width: 320px;
+    max-width: 100%;
+    border-radius: 2em;
+
 }
 
 #enter-query input:focus {
     outline: none;
+}
+
+#enter-query i {
+    padding-right: 1rem;
 }
 
 select:focus {
@@ -99,4 +114,30 @@ select {
 
 #website-selector {
     color: white;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    z-index: 1001;
+    max-height: 90vh;
+    width: 300px;
+    z-index: 1001;
+    border-radius: 1rem;
 }

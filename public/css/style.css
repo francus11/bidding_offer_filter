@@ -60,7 +60,7 @@ footer {
     justify-content: center;
     color: white;
     border-radius: 2rem;
-    
+    text-decoration: none;
 }
 .common-button:hover {
     cursor: pointer;
