@@ -1,5 +1,6 @@
 const search = document.querySelector('#enter-query input');
 const addFilterButtonLocation = document.querySelector("#add-filter-button");
+const addSaveButtonLocation = document.querySelector("#content");
 
 search.addEventListener("keyup", function (event) {
     if (event.key === "Enter" && search.value.length >= 3) {
@@ -9,7 +10,7 @@ search.addEventListener("keyup", function (event) {
 
 function loadAddFilterButton() {
     var filterButton = `
-    <div class="added-filter" onclick="openModal()">
+    <div class="added-filter" onclick="openPopup()">
         <div>Add new filter</div>
         <i class="icon-plus-1"></i>
     </div>
@@ -29,5 +30,3 @@ function closePopup() {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("popup").style.display = "none";
 }
-
-
