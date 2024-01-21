@@ -9,5 +9,6 @@ Router::get('', 'DefaultController');
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 Router::post('new_pattern', 'PatternController');
+Router::post('token', 'TokenController');
 
 Router::run($path);
