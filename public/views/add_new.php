@@ -21,8 +21,8 @@
             <i class="icon-cancel-1" onclick="closePopup()"></i>
         </div>
         <select name="filter-selector" id="filter-selector">
-            <option value="price">Price</option>
-            <option value="name">Name</option>
+            <option value="price">&nbsp;&nbsp;&nbsp;&nbsp;Price</option>
+            <option value="name"><t></t>Name</option>
             <option value="color">Color</option>
         </select>
     </div>
@@ -41,10 +41,15 @@
             </div>
         </div>
         <div id="enter-query">
-            <input type="text" name="query" placeholder="Enter query">
-            <i class="icon-search"></i>
+            <input id="query-input" type="text" name="query" placeholder="Enter query">
+            <i onclick="loadAddFilterButton()" type="button" class="icon-search"></i>
         </div>
         <div id="website-selector">Website: Currently only Allegro supported</div>
+        <div id="static-filters">
+            <select name="category" id="category">
+                <option value=""></option>
+            </select>
+        </div>
         <div id="filters">
             <div class="added-filter">
                 <div class="filter-type">Type</div>
@@ -83,7 +88,7 @@
                 <i class="icon-plus-1"></i>
             </div>
         </div>
-
+        <div id="save-button-location"></div>
         <!-- <div id="save-button" class="common-button">Save and search</div> -->
     </div>
     <?php

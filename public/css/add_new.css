@@ -3,10 +3,13 @@
     display: flex;
     padding: 0.75rem 1.5rem;
     border-radius: 2rem;
+    transition: background-color, color 0.25s ease;
 }
 
 .added-filter:hover {
     cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
 }
 
 .added-filter i {
@@ -72,7 +75,7 @@
     gap: 1rem;
 }
 
-#save-button {
+#save-button-location {
     margin-top: auto;
 }
 
@@ -105,16 +108,17 @@
     padding-right: 1rem;
 }
 
-select:focus {
+#filter-selector:focus {
     outline: none;
 }
 
-select {
+#filter-selector {
     padding: 0.5rem;
     font-size: 1rem;
     font-family: inherit;
     margin-top: 0.5rem;
     border-width: 1px;
+    width: 150px;
 }
 
 #website-selector {
