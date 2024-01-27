@@ -38,9 +38,17 @@
 }
 
 .result-item-photo {
-    background-color: red;
+    flex-shrink: 1;
     width: 116px;
     height: 116px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-item-photo img {
+    max-width: auto;
+    height: 100%;
 }
 
 .result-item-buttons {
@@ -68,4 +76,12 @@
 
 .result-item-price {
     font-size: 1.5rem;
+}
+
+.icon-heart-empty {
+    color: white;
+}
+
+.icon-eye-off {
+    color: rgb(228, 51, 51);
 }
