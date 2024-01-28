@@ -1,9 +1,9 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__ .'/../models/User.php';
-require_once __DIR__ .'/../repositories/UserRepository.php';
-require_once __DIR__.'/../../Database.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../repositories/UserRepository.php';
+require_once __DIR__ . '/../../Database.php';
 
 
 class SecurityController extends AppController
@@ -16,8 +16,7 @@ class SecurityController extends AppController
     }
     public function login()
     {
-        if ($this->isSession())
-        {
+        if ($this->isSession()) {
             header("Location: /new_pattern");
         }
 
@@ -39,8 +38,11 @@ class SecurityController extends AppController
         }
 
         $url = "http://$_SERVER[HTTP_HOST]";
+
+        if (session_status() == PHP_SESSION_NONE) {
         
-        session_start();
+            session_start();
+        }
 
         $_SESSION['user_id'] = $user->getId();
 
@@ -63,13 +65,11 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Please provide proper password']]);
         }
 
-        if ($this->userRepository->getUser($username))
-        {
+        if ($this->userRepository->getUser($username)) {
             return $this->render('login', ['messages' => ['This username already exists']]);
         }
 
-        if ($this->userRepository->getUserByEmail($email))
-        {
+        if ($this->userRepository->getUserByEmail($email)) {
             return $this->render('login', ['messages' => ['This email already exists']]);
         }
 
@@ -87,5 +87,14 @@ class SecurityController extends AppController
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/");
     }
-    
+
+    public function account()
+    {
+        if ($this->isSession())
+        {
+            return $this->render("account");
+        }
+        echo "brak sesji";
+        return $this->render("login");
+    }
 }
