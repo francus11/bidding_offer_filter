@@ -167,3 +167,8 @@
 #popup-header h2 {
     margin: 0;
 }
+
+#apply {
+    display: none;
+    margin-top: 1rem;
+}
