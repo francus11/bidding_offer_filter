@@ -90,3 +90,11 @@ footer {
     /* Obrazek nie przekroczy szerokości diva */
     height: auto;
 }
+
+.visible {
+    display: flex;
+}
+
+.invisible {
+    display: none;
+}

@@ -48,15 +48,3 @@ button {
     background-color: #6C4E93;
     color: white;
 }
-
-#register-form {
-    /* display: none; */
-}
-
-.visible-form {
-    display: flex;
-}
-
-.invisible-form {
-    display: none;
-}

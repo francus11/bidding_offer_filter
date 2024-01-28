@@ -24,7 +24,7 @@
                 }
                 ?>
             </div>
-            <form id="login-form" class="visible-form" action="login" method="POST">
+            <form id="login-form" class="visible" action="login" method="POST">
                 <div class="form-title">Login</div>
                 <input type="text" name="login" class="login-input" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
@@ -33,7 +33,7 @@
                     <button class="focused" type="submit">Login</button>
                 </div>
             </form>
-            <form id="register-form" class="invisible-form" action="register" method="POST">
+            <form id="register-form" class="invisible" action="register" method="POST">
                 <div class="form-title">Register</div>
                 <input type="text" name="login" class="login-input" placeholder="Username">
                 <input type="email" name="email" placeholder="Email">
