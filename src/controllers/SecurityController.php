@@ -16,12 +16,17 @@ class SecurityController extends AppController
     }
     public function login()
     {
+        if ($this->isSession())
+        {
+            header("Location: /new_pattern");
+        }
+
         if (!$this->isPost()) {
             return $this->render('login');
         }
 
         $login = $_POST['login'];
-        $password = md5($_POST['password']);
+        $password = $_POST['password'];
 
         $user = $this->userRepository->getUser($login) ?: $this->userRepository->getUserByEmail($login);
 
@@ -29,23 +34,18 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Invalid login/password1']]);
         }
 
-        if ($user->getPassword() !== $password) {
+        if (!password_verify($password, $user->getPassword())) {
             return $this->render('login', ['messages' => ['Invalid login/password2']]);
         }
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/");
+        
+        session_start();
 
-        //tutaj dodać session user
-        
-        // $stmt = new Database();
-        // $stmt = $stmt->connect()->prepare('
-        // SELECT * FROM USER
-        
-        // ');
-        // $stmt->execute();
-        // $user = $stmt->fetchall();
-        // var_dump($user);
+        $_SESSION['user_id'] = $user->getId();
+
+        //return $this->render('patterns', []);
+        header("Location: {$url}/");
     }
 
     public function register()
@@ -63,12 +63,29 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Please provide proper password']]);
         }
 
-        //TODO try to use better hash function
-        $user = new User($username, $email, md5($password));
+        if ($this->userRepository->getUser($username))
+        {
+            return $this->render('login', ['messages' => ['This username already exists']]);
+        }
 
-        $this->userRepository->addUser($user);
+        if ($this->userRepository->getUserByEmail($email))
+        {
+            return $this->render('login', ['messages' => ['This email already exists']]);
+        }
+
+        //TODO try to use better hash function
+
+        $this->userRepository->addUser($username, $email, password_hash($password, PASSWORD_BCRYPT));
 
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
+    }
+
+    public function logout()
+    {
+        session_start();
+        session_destroy();
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/");
     }
     
 }
