@@ -1,0 +1,82 @@
+#account-container {
+    background-color: #4F4F4F;
+    padding: 2em;
+    width: 500px;
+    border-radius: 25px;
+}
+
+form {
+    display: flex;
+    row-gap: 1em;
+    flex-direction: column;
+
+}
+
+.title {
+    font-size: 2.5rem;
+    color: white;
+    margin-left: 2rem;
+}
+
+.form-title {
+    font-size: 2rem;
+    color: white;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+#big-buttons {
+    margin-top: 1rem;
+    display: flex;
+    column-gap: 2em;
+}
+
+input,
+.big-button {
+    height: 3em;
+    border-radius: 1.5em;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5em;
+    border: none;
+}
+
+.big-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+}
+
+#delete
+{
+    background-color: rgb(228, 51, 51);
+}
+
+button {
+    font-size: 1rem;
+}
+
+input {
+    padding: 0 2rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: end;
+}
+
+.form-button {
+    margin-right: 1rem;
+}
+
+.focused {
+    background-color: #6C4E93;
+    color: white;
+}

@@ -6,7 +6,7 @@
         <div id="links">
             <a href="favourite">Favourite</a>
             <a href="patterns">Patterns</a>
-            <a href="login">Account</a>
+            <a href="account">Account</a>
         </div>
         <div class="header-square"></div>
     </div>
