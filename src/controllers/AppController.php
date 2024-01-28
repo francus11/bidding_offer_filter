@@ -32,4 +32,15 @@ class AppController {
         }
         print $output;
     }
+
+    protected function isSession()
+    {
+        session_start();
+        if(isset($_SESSION['user_id']))
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
