@@ -5,7 +5,6 @@ require_once __DIR__.'/../models/User.php';
 
 class UserRepository extends Repository
 {
-
     public function getUser(string $username): ?User
     {
         $stmt = $this->database->connect()->prepare('
@@ -24,14 +23,15 @@ class UserRepository extends Repository
         return new User(
             $user['Username'],
             $user['Email'],
-            $user['Password']
+            $user['Password'],
+            $user['ID']
         );
     }
     public function getUserByEmail(string $email): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user u
-            WHERE Email = :email
+            SELECT * FROM "USER" u
+            WHERE "Email" = :email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -45,11 +45,12 @@ class UserRepository extends Repository
         return new User(
             $user['Username'],
             $user['Email'],
-            $user['Password']
+            $user['Password'],
+            $user['ID']
         );
     }
 
-    public function addUser(User $user)
+    public function addUser($username, $email, $password)
     {
         $stmt = $this->database->connect()->prepare('
             INSERT INTO "USER" ("Username", "Email", "Password")
@@ -57,9 +58,9 @@ class UserRepository extends Repository
         ');
 
         $stmt->execute([
-            $user->getUsername(),
-            $user->getEmail(),
-            $user->getPassword()
+            $username,
+            $email,
+            $password
         ]);
     }
 
