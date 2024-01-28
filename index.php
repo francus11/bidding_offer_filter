@@ -13,11 +13,12 @@ Router::get('login', 'SecurityController');
 Router::get('logout', 'SecurityController');
 Router::get('account', 'SecurityController');
 Router::get('cat', 'APIController');
+Router::get('api', 'APIController');
+
 
 
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 Router::post('new_pattern', 'PatternController');
-Router::post('token', 'TokenController');
 
 Router::run($path);
