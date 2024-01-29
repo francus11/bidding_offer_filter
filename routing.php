@@ -28,7 +28,8 @@ class Router
         $action = $urlParts[0];
 
         if (!array_key_exists($action, self::$routes)) {
-            die("Wrong url!");
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/");
         }
 
         $controller = self::$routes[$action];

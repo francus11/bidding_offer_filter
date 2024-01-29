@@ -30,11 +30,11 @@ class SecurityController extends AppController
         $user = $this->userRepository->getUser($login) ?: $this->userRepository->getUserByEmail($login);
 
         if ($user == null) {
-            return $this->render('login', ['messages' => ['Invalid login/password1']]);
+            return $this->render('login', ['inv_login' => 'Invalid login/password']);
         }
 
         if (!password_verify($password, $user->getPassword())) {
-            return $this->render('login', ['messages' => ['Invalid login/password2']]);
+            return $this->render('login', ['inv_login' => 'Invalid login/password']);
         }
 
         $url = "http://$_SERVER[HTTP_HOST]";
@@ -47,7 +47,7 @@ class SecurityController extends AppController
         $_SESSION['user_id'] = $user->getId();
 
         //return $this->render('patterns', []);
-        header("Location: {$url}/");
+        header("Location: {$url}/patterns");
     }
 
     public function register()
@@ -94,7 +94,6 @@ class SecurityController extends AppController
         {
             return $this->render("account");
         }
-        echo "brak sesji";
         return $this->render("login");
     }
 }

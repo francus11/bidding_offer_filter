@@ -1,5 +1,4 @@
 #content {
-    width: 1000px;
     color: white;
     justify-content: start;
     flex-direction: column;
@@ -35,6 +34,8 @@
     padding: 1rem 2rem;
     font-size: 2rem;
     border-radius: 1rem;
+    color: white;
+    text-decoration: none;
 }
 
 .right-justify p{
@@ -56,4 +57,43 @@
 
 .bigger {
     width: 600px;
+}
+
+@media (max-width: 430px) {
+
+    .tile {
+        flex-direction: column;
+    }
+
+    .text-box {
+        width: 100%;
+    }
+    
+    .logo-img {
+        width: 100%;
+    }
+
+    .tile:nth-child(2)
+    {
+        flex-direction: column-reverse;
+    }
+
+    .text-box p {
+        text-align: justify;
+    }
+
+    .right-justify p {
+        text-align: center;
+    }
+
+    .button-box {
+        width: 100%;
+        height: 150px;
+    }
+
+    .logo-img img {
+        max-width: 100%;
+        height: auto;
+    }
+    
 }

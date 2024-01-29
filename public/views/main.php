@@ -25,9 +25,9 @@
         </div>
         <div class="tile">
             <div class="button-box">
-                <div class="button-redirect">
+                <a href="/patterns" class="button-redirect">
                     Try now!
-                </div>
+                </a>
             </div>
             <div class="text-box right-justify bigger">
                 <p>

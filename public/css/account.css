@@ -80,3 +80,14 @@ input:focus {
     background-color: #6C4E93;
     color: white;
 }
+
+@media (max-width: 430px) {
+    #account-container {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 1em;
+    }
+    .title, .form-title {
+        margin-left: 1rem;
+    }
+}

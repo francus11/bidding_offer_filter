@@ -48,3 +48,17 @@ button {
     background-color: #6C4E93;
     color: white;
 }
+
+.message
+{
+    margin-left: 1rem;
+    color: rgb(228, 51, 51);
+}
+
+@media (max-width: 430px) {
+    #login-container {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 2em 1em;
+    }
+}

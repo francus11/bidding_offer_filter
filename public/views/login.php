@@ -1,3 +1,10 @@
+<?php
+function message($text)
+{
+    return '<div class="message">' . $text . '</div>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,23 +18,24 @@
 </head>
 
 <body>
-    <header></header>
+    <?php
+    include 'common/header_empty.php';
+    ?>
     <div id="content">
 
         <div id="login-container">
-            <div class="messages">
-                <?php
-                if (isset($messages)) {
-                    foreach ($messages as $message) {
-                        echo $message;
-                    }
-                }
-                ?>
-            </div>
             <form id="login-form" class="visible" action="login" method="POST">
                 <div class="form-title">Login</div>
                 <input type="text" name="login" class="login-input" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
+
+
+                <?php
+
+                if (isset($inv_login)) {
+                    echo message($inv_login);
+                }
+                ?>
                 <div class="form-buttons">
                     <button id="register-swap-button" type="button">Register</button>
                     <button class="focused" type="submit">Login</button>

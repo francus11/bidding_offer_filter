@@ -15,7 +15,6 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: start;
-    width: 1000px;
 }
 
 .result-item {
@@ -84,4 +83,12 @@
 
 .icon-eye-off {
     color: rgb(228, 51, 51);
+}
+
+@media (max-width: 430px) {
+
+    .result-item-title {
+        font-size: 1.2rem;
+    }
+
 }

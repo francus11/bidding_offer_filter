@@ -4,17 +4,17 @@ const registerSwapButton = loginForm.querySelector('#register-swap-button');
 const loginSwapButton = registerForm.querySelector('#login-swap-button');
 
 function swapToRegister() {
-    loginForm.classList.remove('visible-form');
-    loginForm.classList.add('invisible-form');
-    registerForm.classList.remove('invisible-form');
-    registerForm.classList.add('visible-form');
+    loginForm.classList.remove('visible');
+    loginForm.classList.add('invisible');
+    registerForm.classList.remove('invisible');
+    registerForm.classList.add('visible');
 }
 
 function swapToLogin() {
-    registerForm.classList.remove('visible-form');
-    registerForm.classList.add('invisible-form');
-    loginForm.classList.remove('invisible-form');
-    loginForm.classList.add('visible-form');
+    registerForm.classList.remove('visible');
+    registerForm.classList.add('invisible');
+    loginForm.classList.remove('invisible');
+    loginForm.classList.add('visible');
 }
 
 registerSwapButton.addEventListener('click', swapToRegister);
